@@ -1,4 +1,3 @@
-
 # Return a sorted copy of the list x
 x.sorted(x) # Returns [1, 2, 3]
 
