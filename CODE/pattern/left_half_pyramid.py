@@ -17,5 +17,5 @@ def pattern(row):
             print("*",end="")
         print("\n")
 
-n = int(input("Enter the Number : "))
-pattern(n)
+row = int(input("Enter the Number : "))
+pattern(row)
