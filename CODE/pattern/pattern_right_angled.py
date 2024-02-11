@@ -1,4 +1,10 @@
 # pattern using python 
+# the output will be something like this 
+# *
+# **
+# ***
+# ****
+# *****
 
 def pattern(n):
     for i in range(n):
