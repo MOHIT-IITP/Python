@@ -1,3 +1,17 @@
+# output of this code will be something like this 
+
+#      * 
+#     * * 
+#    * * * 
+#   * * * * 
+#  * * * * * 
+# * * * * * * 
+# * * * * * * 
+#  * * * * * 
+#   * * * * 
+#    * * * 
+#     * * 
+#      * 
 
 def pattern(n): 
     for row in range(n):
