@@ -15,7 +15,7 @@ def pattern(row):
             print(" ",end="")
         for k in range(i):
             print("*",end="")
-        print("\n")
+        print()
 
 row = int(input("Enter the Number : "))
 pattern(row)
