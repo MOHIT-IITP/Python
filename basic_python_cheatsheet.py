@@ -7,7 +7,7 @@ x.sort() # Returns None
 # Reverse the order of elements in x
 reversed(x) # Returns [2, 3, 1]
 
-# Reverse the list in-place
+# Reverse the item in the list 
 x.reversed() # Returns None
 
 # Count the number of element 2 in the list
