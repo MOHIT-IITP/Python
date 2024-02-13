@@ -1,4 +1,5 @@
 # Factorial code in python
+# just enter the input and get the factorial of that number 
 
 def factorial(n):
     if n>=1:
