@@ -41,32 +41,38 @@ class Atm:
                 else:
                     print("Insufficiant Balance")
 
-    def know_balance(self):
+    def Check_balance(self):
         print("Enter your account no: ")
         acc_n=str(input())
         if str(self.account_no) == str(acc_n):
-            print(self.balance) 
-        else:
-            print("Sorry")
+            pin_1=str(input("Enter Your Pin Here: "))
+            if str(self.pin)==str(pin_1):
+                print(self.balance)
+            else:
+                print("Incorrect Pin")
 
     def pin_change(self):
         print("Enter your account no: ")
         acc=str(input())
         if str(self.account_no)==str(acc):
-            self.pin=str(input("Create your new pin: "))
-            print("Your New pin is created sucessfully")
+            pin_2=str(input("Enter your old pin: "))
+            if str(self.pin)==str(pin_2):
+                self.pin=str(input("Create your new pin: "))
+                print("Your New pin is created sucessfully")
+            else:
+                print("Incorrect Pin")
         else:
             print("Sorry")
 
     
 
-a1= Atm("mohit kumar",20,394,123,9999,9876,1234567890)
+a1= Atm("Mohit kumar",20,394,123,9999,9876,1234567890)
+#print(a1.deposit(1))
+#print(a1.withdraw())
+#print(a1.Check_balance())
+#print(a1.pin_change())
+#print(a1.name_change())
 print(a1.detail())
-print(a1.deposit(1))
-print(a1.withdraw())
-print(a1.know_balance())
-print(a1.pin_change())
-print(a1.name_change())
 
 
 
