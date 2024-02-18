@@ -26,7 +26,9 @@ class Atm:
             new=self.balance+amount
             print(f"Available Balance:  {new}")
         else:
+            print("************************")
             print("Incorrect Account Number")
+            print("************************")
 
     def name_change(self):
         acc1=str(input("Enter Account No : "))
@@ -36,10 +38,14 @@ class Atm:
             if str(newname)==str(newname_1):
                 self.name=newname
                 print("New Name Is Changed Sucessfully.")
+            else:
+                print("New Name Not Matched")
+        else:
+            print("INCORRECT ACCOUNT NO. ")
         print(f"New Name : {self.name}")
 
     def withdraw(self):
-        acc2=str(input("Enter Account No: "))
+        acc2=str(input("ReEnter Account No: "))
         if str(self.account_no)==str(acc2):
             pin1=str(input("Enter Pin Here: "))
             if str(self.pin)==str(pin1):
@@ -53,9 +59,17 @@ class Atm:
                     print("Insufficiant Balance")
                     print("--------------------")
                     print("********************")
+            else:
+                print("*************")
+                print("INCORRECT PIN")
+                print("*************")
+        else:
+            print("*********************")
+            print("INCORRECT ACCOUNT NO.")
+            print("*********************")
 
-    def Check_balance(self):
-        print("Enter Account No: ")
+    def check_balance(self):
+        print("ReEnter Account No: ")
         acc_n=str(input())
         if str(self.account_no) == str(acc_n):
             pin_1=str(input("Enter Pin Here: "))
@@ -67,9 +81,13 @@ class Atm:
                 print("Incorrect Pin")
                 print("-------------")
                 print("*************")
+        else:
+            print("*********************")
+            print("INCORRECT ACCOUNT NO.")
+            print("*********************")
 
     def pin_change(self):
-        print("Enter Account No. : ")
+        print("ReEnter Account No. : ")
         acc=str(input())
         if str(self.account_no)==str(acc):
             pin_2=str(getpass.getpass("Enter Old Pin: "))
@@ -115,9 +133,9 @@ class Atm:
             if(str(self.name)==str(n)):
                 if(str(self.pin)==str(p)):
                     print("You Have Logged In Sucessfully")
-                    x=int(input("'0': Get Detail \n'1': Balance  \n'2': Pin Change \n'3': Name Change \n'4': LogOut"))
+                    x=int(input("'0': Get Detail \n'1': Balance  \n'2': Pin Change \n'3': Name Change \n'4' : Withdraw\n'5' : Deposit\n'6' : LogOut/SignOut"))
                     if(int(x)==1):
-                        print("Current Balance is: {self.balance}")
+                        print(self.check_balance())
                     elif(int(x)==0):
                         print(self.detail())
                     elif(int(x)==2):
@@ -125,7 +143,12 @@ class Atm:
                     elif(int(x)==3):
                         print(self.name_change())
                     elif(int(x)==4):
-                        os.system('clear')
+                        print(self.withdraw())
+                    elif(int(x)==5):
+                        print(self.deposit())
+                    elif(int(x)==6):
+                        os.system("clear")
+                        exit()
                 else:
                     print("*************")
                     print("-------------")
@@ -147,8 +170,8 @@ class Atm:
     
 a1= Atm("Mohit kumar",20,394,1234,9999,9876,1234567890)
 # print(a1.deposit(1))
-# print(a1.withdraw())
-print(a1.signin())
+print(a1.withdraw())
+# print(a1.signin())
 
 
 
