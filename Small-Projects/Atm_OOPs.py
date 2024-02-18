@@ -76,21 +76,28 @@ class Atm:
             if str(self.pin)==str(pin_2):
                 newpin=str(getpass.getpass("Create New Pin: "))
                 newpin_1=str(getpass.getpass("ReEnter New Pin: "))
-                if str(newpin)==str(newpin_1):
-                    self.pin=newpin
+                if len(newpin==4):
+                    if str(newpin)==str(newpin_1):
+                        self.pin=newpin
+                    else:
+                        print("Pin Not Matched")
                 else:
-                    print("Pin Not Matched")
+                    print("**********************")
+                    print("----------------------")
+                    print("PIN MUST BE OF 4 DIGIT")
+                    print("----------------------")
+                    print("**********************")
                 print("Your New Pin Is Created Sucessfully")
             else:
                 print("*************")
                 print("-------------")
-                print("Incorrect Pin")
+                print("INCORRECT PIN")
                 print("-------------")
                 print("*************")
         else:
             print("**********************")
             print("----------------------")
-            print("Incorrect Account No. ")
+            print("INCORRECT ACCOUNT N0. ")
             print("----------------------")
             print("**********************")
 
@@ -98,7 +105,7 @@ class Atm:
         print("****************************************************************************")
         print("*                                                                          *")
         print("*                        WELCOME TO MOHIT'S  ATM                           *")
-        print("*                                                                          *")
+        print("*                             ATM SYSTEM                                   *")
         print("****************************************************************************")
 
         a=str(input("Enter Account Number Here: "))
@@ -108,7 +115,7 @@ class Atm:
             if(str(self.name)==str(n)):
                 if(str(self.pin)==str(p)):
                     print("You Have Logged In Sucessfully")
-                    x=int(input("'1' : Balance; '0' : Get Detail; '2' : Pin Change; '3' : Name Change"))
+                    x=int(input("'0': Get Detail \n'1': Balance  \n'2': Pin Change \n'3': Name Change \n'4': LogOut"))
                     if(int(x)==1):
                         print("Current Balance is: {self.balance}")
                     elif(int(x)==0):
@@ -117,26 +124,28 @@ class Atm:
                         print(self.pin_change())
                     elif(int(x)==3):
                         print(self.name_change())
+                    elif(int(x)==4):
+                        os.system('clear')
                 else:
                     print("*************")
                     print("-------------")
-                    print("Incorrect Pin")
+                    print("INCORRECT PIN")
                     print("-------------")
                     print("*************")
             else:
                 print("**************")
                 print("--------------")
-                print("Incorrect Name")
+                print("INCORRECT NAME")
                 print("--------------")
                 print("**************")
         else:
             print("**********************")
             print("----------------------")
-            print("Incorrect Account No. ")
+            print("INCORRECT ACCOUNT N0. ")
             print("----------------------")
             print("**********************")
     
-a1= Atm("Mohit kumar",20,394,123,9999,9876,1234567890)
+a1= Atm("Mohit kumar",20,394,1234,9999,9876,1234567890)
 # print(a1.deposit(1))
 # print(a1.withdraw())
 print(a1.signin())
