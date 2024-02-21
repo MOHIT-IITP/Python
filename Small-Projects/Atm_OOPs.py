@@ -21,9 +21,9 @@ class Atm:
         print("Current Pin ",self.pin )
     
     def deposit(self):
-        amount=int(input("Enter amount : "))
         acn=str(input("Enter Account No: "))
         if(str(self.account_no)==str(acn)):
+            amount=int(input("Enter amount : "))
             new=self.balance+amount
             print(f"Available Balance:  {new}")
         else:
