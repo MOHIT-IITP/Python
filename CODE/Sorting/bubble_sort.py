@@ -14,7 +14,7 @@ def sortting(lst):
             return 
 
 list_input= input("Enter number with space : ")
-lst=list_input.split(",")
+lst=list_input.split(" ")
 sortting(lst)
 for elem in lst:
     print(elem)
