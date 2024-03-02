@@ -20,3 +20,16 @@ print(lst)
 
 x2 = (datetime.datetime.now())
 print("Time take by code is " , x2-x1)
+
+
+
+# selection sort in short way 
+def sorting(lst):
+    size=len(lst)
+    for i in range(size):
+        min = i
+        for j in range(i+1,size):
+            if lst[j]<lst[min]:
+                min=j
+        lst[i],lst[min]=lst[i],lst[min]
+    return lst
