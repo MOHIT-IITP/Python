@@ -1,19 +1,22 @@
-# this code is not working right  now but the process is kinda same 
-def partition(a,start,end):
-    pos=start
-    for i  in range(start,end):
-        if(a[i]<=a[end]):
-            a[i],a[pos]=a[pos],a[i]
-            pos+=1
-    return pos-1
+# sorting usign quick sort in python 
+# i have also uploaded quick sort with cpp 
+def partition(arr, start, end):
+    pivot = arr[end]
+    i = start - 1
+    for j in range(start, end):
+        if arr[j] <= pivot:
+            i += 1
+            arr[i], arr[j] = arr[j], arr[i]
+    arr[i + 1], arr[end] = arr[end], arr[i + 1]
+    return i + 1
 
-def quicksort(a,start,end):
-    if(start>=end):
-        return 
-    pivot = partition(a,start,end)
-    quicksort(a,start,pivot-1)
-    quicksort(a,pivot,end)
-    
-    
-a=[5,4,3,3,1,77]
-quicksort(a,0,5)
+def quicksort(arr, start, end):
+    if start < end:
+        pivot = partition(arr, start, end)
+        quicksort(arr, start, pivot - 1)
+        quicksort(arr, pivot + 1, end)
+
+arr = [5, 4, 3, 3, 1, 77]
+size=(len(arr)-1)
+quicksort(arr, 0,size)
+print("Sorted array:", arr)
