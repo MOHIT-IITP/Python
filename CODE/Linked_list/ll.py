@@ -39,5 +39,20 @@ class LinkedList:
                 currentNode.next = newNode
             else:
                 print("Index is not present")
+    def updateAnode(self,value,index):
+        newNode = Node(value)
+        current_position=0
+        temp=self.head
+        if temp==None:
+            temp=newNode
+        else:
+            while(current_position!=index-1):
+                current_position+=1
+                temp=temp.next
+            if temp!=None:
+                newNode.next=temp.next.next
+                temp.next=newNode
+            else:
+                print("index is not present")
 
 
