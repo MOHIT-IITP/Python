@@ -32,11 +32,31 @@ class doublyLL:
             print(current_node.data)
             current_node=current_node.next
 
+    def insertAtindex(self,index,value):
+        newNode=Node(value)
+        current_node=self.head
+        position=0
+        if current_node==None:
+            current_node=newNode
+        else:
+            while(position!=index):
+                position+=1
+                current_node=current_node.next
+            newNode.next=current_node
+            newNode.prev=current_node.prev
+            if current_node.prev:
+                current_node.prev.next=newNode
+            else:
+                self.head = newNode
+            current_node.prev=newNode
+
 
 ll=doublyLL()
 ll.insertAtbegin(10)
 ll.insertAtbegin(90)
 ll.insertAtend(20)
+ll.insertAtindex(1,89)
 ll.showLL()
+
 
 

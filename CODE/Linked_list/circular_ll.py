@@ -45,6 +45,8 @@ class circularLL:
             if current == self.head:
                 break
             print()
+    def insert
+
 
 
 
@@ -52,4 +54,5 @@ ll=circularLL()
 ll.insertAtbegin(10)
 ll.insertAtbegin(90)
 ll.insertAtend(20)
+ll.insertAtindex(99,2)
 ll.showLL()
