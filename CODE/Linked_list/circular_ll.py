@@ -45,7 +45,26 @@ class circularLL:
             if current == self.head:
                 break
             print()
-    def insert
+
+    def insertAtindex(self,value,index):
+        newNode=Node(value)
+        current_node=self.head
+        position=0
+        if current_node==None:
+            current_node=newNode
+        elif index==0:
+            self.insertAtbegin(value)
+        else:
+            while(position-1!=index and current_node!=self.head):
+                position+=1
+                current_node=current_node.next
+            newNode.next = current_node.next
+            newNode.prev=current_node
+            current_node.next.prev=newNode
+            current_node.next=newNode
+        if newNode.next==self.head:
+            self.head.prev=newNode
+
 
 
 
