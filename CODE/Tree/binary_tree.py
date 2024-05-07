@@ -40,7 +40,17 @@ bt.root.right.left=Node(6)
 bt.root.right.right=Node(7)
 
 
+# printing the preorder 
+print("preorder: ")
+preorder(bt.root)
 
+# printing the inorder
+print("inorder : ")
+Inorder(bt.root)
+
+# printing the postorder
+print("postorder : ")
+postorder(bt.root)
 # main thing to keep in mind: 
 #preorder  = root left right
 #postorder = left right root
