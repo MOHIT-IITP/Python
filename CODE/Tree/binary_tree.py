@@ -43,10 +43,12 @@ bt.root.right.right=Node(7)
 # printing the preorder 
 print("preorder: ")
 preorder(bt.root)
+print("\n")
 
 # printing the inorder
 print("inorder : ")
 Inorder(bt.root)
+print("\n")
 
 # printing the postorder
 print("postorder : ")
