@@ -39,7 +39,15 @@ bt.root.left.left=Node(4)
 bt.root.right.left=Node(6)
 bt.root.right.right=Node(7)
 
-
+# function to get the height of the binary tree
+def getheight(root):
+    if root is None:
+        return -1 
+    else:
+        left_height = getheight(root.left)
+        right_height = getheight(root.right)
+        return 1+max(left_height, right_height)
+        
 # printing the preorder 
 print("preorder: ")
 preorder(bt.root)
