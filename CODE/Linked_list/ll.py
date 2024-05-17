@@ -21,7 +21,7 @@ class LinkedList:
         if self.head == None:
             self.head = newNode
         else:
-            newNode.next = newNode
+            newNode.next = self.head 
             self.head = newNode
 
     def insertAtindex(self,value,index):
